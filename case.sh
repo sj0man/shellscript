@@ -1,39 +1,30 @@
-KEYPAD_SWITCH_MAIN_PIP=23
-KEYPAD_SIZE_UP=186
-KEYPAD_SIZE_DOWN=183
-KEYPAD_MAIN_CH_UP=166
-KEYPAD_MAIN_CH_DOWN=167
-KEYPAD_PIP_CH_UP=19
-KEYPAD_PIP_CH_DOWN=20
-KEYPAD_PIP_MOVE_LEFT=21
-KEYPAD_PIP_MOVE_RIGHT=22
+#!/bin/sh
+#
+
+# "/bin/sh -> dash" Bourne shell은 dash 링크 되어있고, RANDOM 환경변수 값이 없음
+# /bin/bash (Bourne Again SHell)에서는 RANDOM 환경변수 값이 지정됨
+#
+
+RANDOM=`tr -cd "[:digit:]" < /dev/urandom | head -c 6`
+echo random number: ${RANDOM}
 
 radomKeyevent() {
 
-    # syntax error ??
-    #
-	randomKey=$(echo "${RANDOM} % 9" | bc)
+	randomKey=$(echo "${RANDOM} % 10" | bc)
 
 	case $randomKey in
-		0) echo keyevent $KEYPAD_SWITCH_MAIN_PIP  ;;
-		1) echo keyevent $KEYPAD_SIZE_UP  ;;
-		2) echo keyevent $KEYPAD_SIZE_DOWN  ;;
-		3) echo keyevent $KEYPAD_MAIN_CH_UP  ;;
-		4) echo keyevent $KEYPAD_MAIN_CH_DOWN  ;;
-		5) echo keyevent $KEYPAD_PIP_CH_UP  ;;
-		6) echo keyevent $KEYPAD_PIP_CH_DOWN  ;;
-		7) echo keyevent $KEYPAD_PIP_MOVE_LEFT  ;;
-		8) echo keyevent $KEYPAD_PIP_MOVE_RIGHT  ;;	  
+		0) echo 0 ;;
+		1) echo 1 ;;
+		2) echo 2 ;;
+		3) echo 3 ;;
+		4) echo 4 ;;
+		5) echo 5 ;;
+		6) echo 6 ;;
+		7) echo 7 ;;
+		8) echo 8 ;;
+		9) echo 9 ;;
 	esac
 }
 
-
 radomKeyevent
-exit
-
-
-while true
-do
-	radomKeyevent
-	sleep 1
-done
+exit 0
