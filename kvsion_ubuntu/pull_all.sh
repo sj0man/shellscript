@@ -1,9 +1,9 @@
-DIRS="aries canis gemini onvifcpplib qt-4.8.7 vela virgo"
-
-
+DIRS="aquila aries canis gemini onvifcpplib qt-4.8.7 vela virgo"
 
 for DIR in ${DIRS} ; do
-        echo ${DIR}
-        pushd ${DIR} ; git pull; popd
+	echo ${DIR}
+	if [ -d ${DIR} ]; then
+		cd ${DIR} ; git pull; cd ..
+	fi
 done
 
