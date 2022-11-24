@@ -1,5 +1,12 @@
 # 스크립트 실행할 때, 인자가 없으면 기본값으로 대체
 #
+if [ $# = 0 ]; then
+	echo no parameter
+else
+	echo $*
+fi
+exit 0
+
 NUM=$1
 if [ "${NUM}" = "" ]; then
 	NUM=000
