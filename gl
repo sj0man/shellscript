@@ -1,0 +1,13 @@
+# gl = git log
+#
+ID=$1
+if [ "${ID}" = "" ]
+then
+        echo Usage: gl ID
+	echo	
+fi
+
+git log -1 --name-only ${ID}
+
+exit 0
+
