@@ -5,5 +5,6 @@ for DIR in ${DIRS} ; do
 	if [ -d ${DIR} ]; then
 		cd ${DIR} ; git pull; cd ..
 	fi
+	echo
 done
 
