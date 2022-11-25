@@ -1,9 +1,10 @@
 # ff = find file(s)
 #
 FILES=$1
-if [ "${FILES}" = "" ]
-then
+if [ "${FILES}" = "" ]; then
 	echo Usage: ff name
+	echo
+	exit 0
 fi
 
 find . -name "${FILES}" -print 2> /dev/null

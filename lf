@@ -3,6 +3,8 @@
 SRC=$1
 if [ "${SRC}" = "" ]; then
 	echo Usage: lf src
+	echo
+	exit 0
 fi
 
 grep -n "^\w.*[^\;{]$" ${SRC}

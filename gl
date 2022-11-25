@@ -1,10 +1,10 @@
 # gl = git log
 #
 ID=$1
-if [ "${ID}" = "" ]
-then
-        echo Usage: gl ID
-	echo	
+if [ "${ID}" = "" ]; then
+	echo Usage: gl ID
+	echo
+	exit 0
 fi
 
 git log -1 --name-only ${ID}
