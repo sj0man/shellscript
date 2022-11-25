@@ -1,0 +1,8 @@
+# lf = list function
+#
+SRC=$1
+if [ "${SRC}" = "" ]; then
+	echo Usage: lf src
+fi
+
+grep -n "^\w.*[^\;{]$" ${SRC}
