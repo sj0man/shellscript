@@ -1,4 +1,4 @@
-DIRS="aquila aries canis gemini onvifcpplib qt-4.8.7 vela virgo"
+DIRS="aquila aries canis gemini qt-4.8.7 vela virgo"
 
 for DIR in ${DIRS} ; do
 	echo ========== ${DIR} ==========
