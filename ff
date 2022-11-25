@@ -3,7 +3,7 @@
 FILES=$1
 if [ "${FILES}" = "" ]
 then
-	echo Usage: $0 name
+	echo Usage: ff name
 fi
 
 find . -name "${FILES}" -print 2> /dev/null
