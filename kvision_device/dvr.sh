@@ -1,4 +1,4 @@
-SRCDIR=/mnt/dev2/canis/nt9831x/dvr
+SRCDIR=/mnt/dev2/nt9831x/canis/nt9831x/dvr
 SRCFILE=dvr.ko
 
 DESTDIR=/dvr

@@ -1,8 +1,8 @@
-SRCDIR=/mnt/dev2/output
+SRCDIR=/mnt/dev2/nt9831x/output
 SRCFILE=gui-canis-3r
 
 DESTDIR=/dvr
-DESTFILE=gui.tmp
+DESTFILE=gui
 
 if [ ! -f $SRCDIR/$SRCFILE ] ; then
         echo need to mount

@@ -1,4 +1,4 @@
-SRCDIR=/mnt/dev2/output
+SRCDIR=/mnt/dev2/nt9831x/output
 SRCFILE=libdal-canis-nt9831x.so
 
 DESTDIR=/usr/lib
