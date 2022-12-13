@@ -5,7 +5,7 @@ DESTDIR=~/nt9831x/aries/cal
 
 for DIR in ${DIRS} ; do
 	if [ -d ${DIR} ]; then
-		mv -v ${DIR} ${DESTDIR}
+		mv -vf ${DIR} ${DESTDIR}
 	fi
 done
 
