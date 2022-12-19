@@ -1,3 +1,9 @@
 스크립트 문맥 확인하는 방법
 
 $ sh -n script.sh
+
+
+/bin/sh -> /bin/dash 연결된 경우, 쉘 스크립트 에러 발생
+
+/bin/sh -> /bin/bash 
+
