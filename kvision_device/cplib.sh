@@ -26,3 +26,9 @@ if [ "${input}" = "" ]; then
         echo
 fi
 
+echo -n "Reboot? "
+read input
+
+if [ "${input}" = "" ]; then
+        reboot
+fi
