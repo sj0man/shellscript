@@ -1,5 +1,10 @@
-TOPDIR=/home/ubuntu/nt98336
 #TOPDIR=/home/ubuntu/nt9831x
+#TOPDIR=/home/ubuntu/nt9832x
+TOPDIR=/home/ubuntu/nt98336
+
+#FILES="_chip_nt9832x.cpp _chip_nt98336.cpp"
+#FILES="_chip.cpp _chip_nt98336.cpp"
+FILES="_chip.cpp _chip_nt9832x.cpp"
 
 DESTDIR=${TOPDIR}/aries/cal
 DIRS="ara  auriga  common-dvr-2mp  crater  crux  fornax  generic  indus  libra  mensa  pavo  puppis  volans"
@@ -7,13 +12,6 @@ DIRS="ara  auriga  common-dvr-2mp  crater  crux  fornax  generic  indus  libra  
 CANIS=canis
 CANIS_DIR=${TOPDIR}/aries/cal/${CANIS}
 FILES="_chip.cpp _chip_nt9832x.cpp"
-
-case ${TOPDIR#/home/ubuntu/} in
-	nt9831x) FILES="_chip_nt9832x.cpp _chip_nt98336.cpp" ;;
-	nt9832x) FILES="_chip.cpp _chip_nt98336.cpp" ;;
-	nt98336) FILES="_chip.cpp _chip_nt9832x.cpp" ;;
-esac
-
 
 
 for DIR in ${DIRS} ; do
