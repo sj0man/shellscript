@@ -6,7 +6,7 @@ HOME=/home/ubuntu
 MNT_DIR=/mnt/dev2
 IPADDR=192.168.0.21
 
-if [ -d ${MNT_DIR} ] ; then
+if [ ! -d ${MNT_DIR} ] ; then
     mkdir -p /mnt/dev2
 fi
 
