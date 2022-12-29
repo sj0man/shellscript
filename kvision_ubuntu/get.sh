@@ -21,9 +21,9 @@ done
 
 mkdir -p ./${CANIS}
 for FILE in ${FILES} ; do
-        if [ -f ${CANIS_DIR}/${FILE} ]; then
-                mv -v ${CANIS_DIR}/${FILE} ./${CANIS}
-        fi
+	if [ -f ${CANIS_DIR}/${FILE} ]; then
+		mv -v ${CANIS_DIR}/${FILE} ./${CANIS}
+	fi
 done
 
 exit 0

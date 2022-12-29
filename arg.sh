@@ -19,8 +19,8 @@ echo ${NUM}
 FILE=$1
 
 if [ "${FILE}" == "" ]; then
-  echo "Syntax: $0 File"
-  exit
+	echo "Syntax: $0 File"
+	exit
 fi
 
 if [ ! -e ${FILE} ]; then

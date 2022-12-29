@@ -21,9 +21,9 @@ for DIR in ${DIRS} ; do
 done
 
 for FILE in ${FILES} ; do
-        if [ -f ${CANIS}/${FILE} ]; then
-                mv -v ${CANIS}/${FILE} ${CANIS_DIR}
-        fi
+	if [ -f ${CANIS}/${FILE} ]; then
+		mv -v ${CANIS}/${FILE} ${CANIS_DIR}
+	fi
 done
 rmdir ${CANIS}
 

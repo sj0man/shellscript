@@ -5,15 +5,15 @@ DESTDIR=/dvr
 DESTFILE=gui
 
 if [ ! -f $SRCDIR/$SRCFILE ] ; then
-        echo need to mount
-        echo
-        exit
+	echo need to mount
+	echo
+	exit
 fi
 
 echo
 md5sum $SRCDIR/$SRCFILE
 if [ -f $DESTDIR/$DESTFILE ] ; then
-        md5sum $DESTDIR/$DESTFILE
+	md5sum $DESTDIR/$DESTFILE
 fi
 echo
 
@@ -22,10 +22,10 @@ read input
 
 if [ "${input}" = "" ]; then
 
-        cp -v $SRCDIR/$SRCFILE $DESTDIR/$DESTFILE
+	cp -v $SRCDIR/$SRCFILE $DESTDIR/$DESTFILE
 
-        echo
-        md5sum $SRCDIR/$SRCFILE $DESTDIR/$DESTFILE
-        echo
+	echo
+	md5sum $SRCDIR/$SRCFILE $DESTDIR/$DESTFILE
+	echo
 fi
 

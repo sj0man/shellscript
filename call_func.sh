@@ -2,7 +2,7 @@
 #
 
 funcA() {
-    echo "funcA"
+	echo "funcA"
 }
 
 echo --

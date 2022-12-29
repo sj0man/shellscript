@@ -1,7 +1,7 @@
 FILES="a.c b.c c.c d.c"
 
 for FILE in ${FILES} ; do
-    echo ${FILE}
+	echo ${FILE}
 done
 
 
@@ -11,6 +11,6 @@ done
 CNT=0
 
 for var in `ls *.sh`; do
-    CNT=$(echo "$CNT + 1" | bc)
-    printf "${var}: %02d, %s\n" `echo ${CNT}` `echo end`;
+	CNT=$(echo "$CNT + 1" | bc)
+	printf "${var}: %02d, %s\n" `echo ${CNT}` `echo end`;
 done
