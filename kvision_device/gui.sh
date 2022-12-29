@@ -1,4 +1,4 @@
-SRCDIR=/mnt/dev2/nt9831x/output
+SRCDIR=/mnt/dev2/nt98336/output
 SRCFILE=gui-canis-3r
 
 DESTDIR=/dvr
