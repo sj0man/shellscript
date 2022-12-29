@@ -5,9 +5,9 @@ DESTDIR=/dvr
 DESTFILE=fwr
 
 if [ ! -f $SRCDIR/$SRCFILE ] ; then
-        echo need to mount
-        echo
-        exit
+	echo need to mount
+	echo
+	exit
 fi
 
 echo
@@ -18,12 +18,12 @@ echo -n "Copy? "
 read input
 
 if [ "${input}" = "" ]; then
-        echo $SRCDIR/$SRCFILE $DESTDIR/$DESTFILE
-        cp -v $SRCDIR/$SRCFILE $DESTDIR/$DESTFILE
+	echo $SRCDIR/$SRCFILE $DESTDIR/$DESTFILE
+	cp -v $SRCDIR/$SRCFILE $DESTDIR/$DESTFILE
 
-        echo
-        md5sum $DESTDIR/$DESTFILE
-        echo
+	echo
+	md5sum $DESTDIR/$DESTFILE
+	echo
 fi
 
 
@@ -31,5 +31,5 @@ echo -n "Reboot? "
 read input
 
 if [ "${input}" = "" ]; then
-        reboot
+	reboot
 fi

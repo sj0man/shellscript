@@ -5,9 +5,9 @@ DESTDIR=/usr/lib
 DESTFILE=libdal.so
 
 if [ ! -f $SRCDIR/$SRCFILE ] ; then
-        echo need to mount
-        echo
-        exit
+	echo need to mount
+	echo
+	exit
 fi
 
 echo
@@ -19,16 +19,16 @@ read input
 
 if [ "${input}" = "" ]; then
 
-        cp -v $SRCDIR/$SRCFILE $DESTDIR/$DESTFILE
+	cp -v $SRCDIR/$SRCFILE $DESTDIR/$DESTFILE
 
-        echo
-        md5sum $SRCDIR/$SRCFILE $DESTDIR/$DESTFILE
-        echo
+	echo
+	md5sum $SRCDIR/$SRCFILE $DESTDIR/$DESTFILE
+	echo
 fi
 
 echo -n "Reboot? "
 read input
 
 if [ "${input}" = "" ]; then
-        reboot
+	reboot
 fi
