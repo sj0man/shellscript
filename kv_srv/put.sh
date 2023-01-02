@@ -7,8 +7,6 @@ TOPDIR=/home/ubuntu/nt98336
 FILES="_chip.cpp _chip_nt9832x.cpp"
 
 DESTDIR=${TOPDIR}/aries/cal
-FROM_SDK=${PWD}/sdk
-TO_SDK=${TOPDIR}/aries/sdk
 DIRS="ara  auriga  common-dvr-2mp  crater  crux  fornax  generic  indus  libra  mensa  pavo  puppis  volans"
 
 CANIS=canis
@@ -28,10 +26,6 @@ for FILE in ${FILES} ; do
 done
 rmdir ${CANIS}
 
-# move SDK
-if [ -d ${FROM_SDK} ] ; then
-	mv -v ${FROM_SDK} ${TO_SDK}
-fi
 
 exit 0
 
