@@ -24,6 +24,8 @@ if [ "${input}" = "" ]; then
 	echo
 	md5sum $SRCDIR/$SRCFILE $DESTDIR/$DESTFILE
 	echo
+else
+	exit
 fi
 
 echo -n "Reboot? "

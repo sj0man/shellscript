@@ -24,6 +24,8 @@ if [ "${input}" = "" ]; then
 	echo
 	md5sum $DESTDIR/$DESTFILE
 	echo
+else
+	exit
 fi
 
 
