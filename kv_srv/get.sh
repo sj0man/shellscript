@@ -7,6 +7,7 @@ TOPDIR=/home/ubuntu/nt98336
 FILES="_chip.cpp _chip_nt9832x.cpp"
 
 SRCDIR=${TOPDIR}/aries/cal
+SDK_DIR=${TOPDIR}/aries/sdk
 DIRS="ara  auriga  common-dvr-2mp  crater  crux  fornax  generic  indus  libra  mensa  pavo  puppis  volans"
 
 CANIS=canis
@@ -26,6 +27,10 @@ for FILE in ${FILES} ; do
 	fi
 done
 
+# move SDK directory
+if [ -d ${SDK_DIR} ] ; then
+	mv -v ${SDK_DIR} ${PWD}
+fi
 
 exit 0
 
