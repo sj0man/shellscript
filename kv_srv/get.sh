@@ -28,8 +28,10 @@ for FILE in ${FILES} ; do
 done
 
 # move SDK directory
-if [ -d ${SDK_DIR} ] ; then
-	mv -v ${SDK_DIR} ${PWD}
+if [ "$1" = "sdk" ] ; then
+	if [ -d ${SDK_DIR} ] ; then
+		mv -v ${SDK_DIR} ${PWD}
+	fi
 fi
 
 exit 0
