@@ -29,10 +29,8 @@ done
 rmdir ${CANIS}
 
 # move SDK
-if [ "$1" = "sdk" ] ;  then
-	if [ -d ${FROM_SDK} ] ; then
-		mv -v ${FROM_SDK} ${TO_SDK}
-	fi
+if [ -d ${FROM_SDK} ] ; then
+	mv -v ${FROM_SDK} ${TO_SDK}
 fi
 
 exit 0
