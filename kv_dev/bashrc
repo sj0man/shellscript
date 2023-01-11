@@ -1,7 +1,7 @@
 # source ./bashrc
 # 경로를 지정해 주어야 정상적으로 실행됨
 #
-alias l='ls -lF | tee'
+alias l='ls -lF'
 alias grep='grep -i'
 alias du='du -h'
 alias df='df -h'
