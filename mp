@@ -21,7 +21,8 @@ elif [ ! -f ${SRC} ]; then
 fi
 
 if [ -d ${DEST} ]; then
-	DEST=$2/$1
+	TMP=`basename $1`
+	DEST=$2/${TMP}
 fi
 
 if [ ! -e ${DEST} ]; then
@@ -40,4 +41,5 @@ echo -n "Copy? "
 read input
 if [ "${input}" = "" ]; then
 	cp -v ${SRC} ${DEST}
+	md5sum ${SRC} ${DEST}
 fi
