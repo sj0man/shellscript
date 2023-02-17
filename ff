@@ -1,5 +1,9 @@
 # ff = find file(s)
 #
+# 단독으로 실행하지 않으면,
+# 별표를 인자로 주기 위해서는 따옴표로 묶어야 한다.
+#   $ sh ff.sh "f*"
+#
 FILES=$1
 if [ "${FILES}" = "" ]; then
 	echo Usage: ff name
