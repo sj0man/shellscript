@@ -1,7 +1,7 @@
 # multiple diff
 #
 if [ $# != 1 ]; then 
-	echo Usage: $0 dest
+	echo Usage: `basename $0` dest
 	echo
 	exit -1
 fi
