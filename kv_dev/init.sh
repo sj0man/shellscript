@@ -7,6 +7,12 @@ LOG_LINK=var
 CPLIB=cplib.sh
 LIBDAL=libdal.sh
 
+if [ ! -d $SHDIR ] ; then
+	echo need to mount
+	echo
+	exit
+fi
+
 if [ -d ${SHDIR} ] ; then
     cp -v ${SHDIR}/* ${PWD}
 fi
