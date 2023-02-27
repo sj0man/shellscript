@@ -1,0 +1,15 @@
+# original diff
+#
+LIST=`find . -maxdepth 1 -name "*-org" | sort`
+
+for SRC in ${LIST} ; do
+	ORG=`basename ${SRC}`
+	NEW=${ORG%-org}
+
+	echo diff ${ORG} ${NEW} 
+	echo ========================================
+	if [ -f ${NEW} ] ; then
+		diff ${ORG} ${NEW}
+	fi
+done
+
