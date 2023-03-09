@@ -1,0 +1,15 @@
+# gg = global grep
+#
+#
+FILES=$1
+if [ "${FILES}" = "" ]; then
+	echo Usage: gg name
+	echo
+	exit 0
+fi
+ARG=$1
+
+grep -r "${ARG}" *
+
+
+exit 0
