@@ -1,36 +1,38 @@
-#TOPDIR=/home/ubuntu/nt9831x
-#TOPDIR=/home/ubuntu/nt9832x
-TOPDIR=/home/ubuntu/nt98336
+# select TARGET and CHIP
+#
+TARGET=crater
+CHIP=_chip_nt98633.cpp
 
-#FILES="_chip_nt9832x.cpp _chip_nt98336.cpp"
-#FILES="_chip.cpp _chip_nt98336.cpp"
-FILES="_chip.cpp _chip_nt9832x.cpp"
-
+TOPDIR=..
 SRCDIR=${TOPDIR}/aries/cal
-SDK_DIR=${TOPDIR}/aries/sdk
-DIRS="ara  auriga  common-dvr-2mp  crater  crux  fornax  generic  indus  libra  mensa  pavo  puppis  volans"
-
-CANIS=canis
-CANIS_DIR=${TOPDIR}/aries/cal/${CANIS}
-
+DIRS="ara  auriga  common-dvr-2mp  canis  crater  crux  fornax  generic  indus  libra  mensa  pavo  puppis  volans"
 
 for DIR in ${DIRS} ; do
-	if [ -d ${SRCDIR}/${DIR} ]; then
-		mv -v ${SRCDIR}/${DIR} ${PWD}
+	if [ ! "${DIR}" = "${TARGET}" ]; then
+		if [ -d ${SRCDIR}/${DIR} ]; then
+			mv -v ${SRCDIR}/${DIR} ${PWD}
+		fi
 	fi
 done
 
-mkdir -p ./${CANIS}
+TARGET_DIR=${TOPDIR}/aries/cal/${TARGET}
+FILES="_chip.cpp _chip_nt9832x.cpp _chip_nt98336.cpp _chip_nt98633.cpp"
+
+TMPDIR=./${TARGET}-tmp
+mkdir -p ${TMPDIR}
 for FILE in ${FILES} ; do
-	if [ -f ${CANIS_DIR}/${FILE} ]; then
-		mv -v ${CANIS_DIR}/${FILE} ./${CANIS}
+	if [ ! "${FILE}" = "${CHIP}" ]; then
+		if [ -f ${TARGET_DIR}/${FILE} ]; then
+			mv -v ${TARGET_DIR}/${FILE} ${TMPDIR}
+		fi
 	fi
 done
 
 # move SDK directory
+SDKDIR=${TOPDIR}/aries/sdk
 if [ "$1" = "sdk" ] ; then
-	if [ -d ${SDK_DIR} ] ; then
-		mv -v ${SDK_DIR} ${PWD}
+	if [ -d ${SDKDIR} ] ; then
+		mv -v ${SDKDIR} ${PWD}
 	fi
 fi
 
