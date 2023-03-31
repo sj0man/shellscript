@@ -28,6 +28,14 @@ for FILE in ${FILES} ; do
 	fi
 done
 
+
+# move hisilicon
+HSDIR=${TOPDIR}/aries/sdk/hisilicon
+if [ -d ${HSDIR} ] ; then
+	mv -v ${HSDIR} ${PWD}
+fi
+
+
 # move SDK directory
 SDKDIR=${TOPDIR}/aries/sdk
 if [ "$1" = "sdk" ] ; then

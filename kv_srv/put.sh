@@ -5,7 +5,7 @@ CHIP=_chip_nt98633.cpp
 
 TOPDIR=..
 DESTDIR=${TOPDIR}/aries/cal
-DIRS="ara  auriga  common-dvr-2mp  canis  crater  crux  fornax  generic  indus  libra  mensa  pavo  puppis  volans"
+DIRS="ara  auriga  common-dvr-2mp  canis crater  crux  fornax  generic  indus  libra  mensa  pavo  puppis  volans"
 
 for DIR in ${DIRS} ; do
 	if [ -d ${DIR} ]; then
@@ -24,6 +24,15 @@ for FILE in ${FILES} ; do
 	fi
 done
 rmdir ${TMPDIR}
+
+
+# move hisilicon
+HSDIR=hisilicon
+ORG_SDKDIR=${TOPDIR}/aries/sdk
+if [ -d ${HSDIR} ] ; then
+	mv -v ${HSDIR} ${ORG_SDKDIR}
+fi
+
 
 # move SDK directory
 SDKDIR=sdk
