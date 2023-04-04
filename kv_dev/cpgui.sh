@@ -1,8 +1,11 @@
-SRCDIR=/mnt/dev2/nt98336/canis/nt98336/dvr
-SRCFILE=dvr.ko
+# SRCDIR=/mnt/dev2/nt98336/output
+# SRCFILE=gui-canis-3r
+
+SRCDIR=/mnt/dev2/nt9832x/output
+SRCFILE=gui-crater-3r
 
 DESTDIR=/dvr
-DESTFILE=dvr.ko
+DESTFILE=gui
 
 if [ ! -f $SRCDIR/$SRCFILE ] ; then
 	echo need to mount
@@ -27,13 +30,5 @@ if [ "${input}" = "" ]; then
 	echo
 	md5sum $SRCDIR/$SRCFILE $DESTDIR/$DESTFILE
 	echo
-else
-	exit
 fi
 
-echo -n "Reboot? "
-read input
-
-if [ "${input}" = "" ]; then
-	reboot
-fi
