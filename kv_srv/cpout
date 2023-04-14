@@ -19,9 +19,12 @@ DESTS=(
 
 idx=0
 while [ ${idx} -lt ${MAX_NUM} ] ; do
-	cp -v ${SRCS[${idx}]} ${DESTS[${idx}]}
+	for src in ${SRCS[${idx}]} ; do
+		if [ -f ${src} ] ; then
+			cp -vf ${src} ${DESTS[${idx}]}
+		fi
+	done
 	idx=$(( ${idx}+1 ))
-	echo --
 done
 
 exit 0
