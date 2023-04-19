@@ -2,7 +2,7 @@
 
 
 # should assign the path of file like below.
-# if assign only file, then it doesn't apply.
+# if assign only file without path, then it doesn't apply.
 #
 # source ./bashrc
 #
