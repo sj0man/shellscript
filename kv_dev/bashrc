@@ -1,5 +1,10 @@
+
+
+
+# should assign the path of file like below.
+# if assign only file, then it doesn't apply.
+#
 # source ./bashrc
-# 경로를 지정해 주어야 정상적으로 실행됨
 #
 alias l='ls -lF'
 alias grep='grep -i'
