@@ -9,7 +9,7 @@ if [ "${FILES}" = "" ]; then
 fi
 ARG=$1
 
-grep -r "${ARG}" *
+grep -nr "${ARG}" *
 
 
 exit 0
