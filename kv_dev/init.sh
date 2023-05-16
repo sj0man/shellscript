@@ -27,3 +27,8 @@ fi
 if [ -e ${BASHRC} ] && [ -e ${PROFILE} ] ; then
 	cat ${BASHRC} >> ${PROFILE}
 fi
+
+
+
+
+
