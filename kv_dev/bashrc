@@ -16,5 +16,6 @@ alias c=clear
 alias v=vi
 alias m=less
 alias h=history
+alias tailf='tail -f'
 alias g='/dvr/gui -daemon'
 #alias g='/dvr/gui'
