@@ -33,6 +33,13 @@ if [ -d ${HSDIR} ] ; then
 	mv -v ${HSDIR} ${ORG_SDKDIR}
 fi
 
+# move onvif
+ONVIF=onvif
+ORG_ONVIF=${TOPDIR}/aries/onvif
+if [ -d ${ONVIF} ] ; then
+	mv -v ${ONVIF} ${ORG_ONVIF}
+fi
+
 
 # move SDK directory
 SDKDIR=sdk
