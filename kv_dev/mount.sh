@@ -14,3 +14,6 @@ fi
 udhcpc -i eth0
 mount -t nfs -o nolock ${IPADDR}:${HOME} ${MNT_DIR}
 
+# mount -t nfs -o nolock 192.168.0.21:/home/ubuntu /mnt/dev2
+
+
