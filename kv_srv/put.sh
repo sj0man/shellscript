@@ -23,15 +23,10 @@ for FILE in ${FILES} ; do
 		mv -v ${TMPDIR}/${FILE} ${TARGET_DIR}
 	fi
 done
-rmdir ${TMPDIR}
-
-
-# move hisilicon
-HSDIR=hisilicon
-ORG_SDKDIR=${TOPDIR}/aries/sdk
-if [ -d ${HSDIR} ] ; then
-	mv -v ${HSDIR} ${ORG_SDKDIR}
+if [ -d ${TMPDIR} ]; then
+	rmdir ${TMPDIR}
 fi
+
 
 # move onvif
 ONVIF=onvif

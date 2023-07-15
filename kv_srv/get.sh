@@ -29,13 +29,6 @@ for FILE in ${FILES} ; do
 done
 
 
-# move hisilicon
-HSDIR=${TOPDIR}/aries/sdk/hisilicon
-if [ -d ${HSDIR} ] ; then
-	mv -v ${HSDIR} ${PWD}
-fi
-
-
 # move onvif
 ONVIF=${TOPDIR}/aries/onvif
 if [ -d ${ONVIF} ] ; then
