@@ -1,0 +1,17 @@
+#
+#
+if [ $# != 1 ]; then
+	echo `basename $0` filename
+	echo
+	exit 0
+fi
+
+TRGDIR=../inlt16
+SRCFILE=$1
+
+OLDFILE=${TRGDIR}/${SRCFILE}
+NEWFILE=./${SRCFILE}
+
+diff -w ${OLDFILE} ${NEWFILE}
+
+
