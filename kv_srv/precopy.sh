@@ -28,3 +28,11 @@ while [ ${idx} -lt ${MAX_NUM} ] ; do
 done
 
 exit 0
+
+# actual command
+# 디렉토리 위치는 crater-nt98633 에서 실행해야 한다.
+#
+cp -v ../../output/* gui/
+cp -v ../../output/onvif/* onvif/
+cp -v ../../aries/sdk/onvifcpplib/nt98336/lib/libonvifcpplib.so onvif/
+cp -v ../../crater/nt98633/dvr/dvr.ko system/
