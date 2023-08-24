@@ -17,6 +17,5 @@ alias v=vi
 alias m=less
 alias h=history
 alias tailf='tail -f'
-alias g='/dvr/gui -daemon'
-#alias g='/dvr/gui'
+alias g='/dvr/gui.tmp'
 alias tv='tail -f /var/log/message'
