@@ -1,4 +1,4 @@
-SRCDIR=/mnt/dev2/tmp
+SRCDIR=/mnt/dev2/fwr
 SRCFILE=$1
 
 DESTDIR=/dvr
