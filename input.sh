@@ -1,12 +1,11 @@
 #
 #
 # user input
-echo -n "Do you want to xxx (y/n)?"
-read input
+read -p "Do you want to xxx (y/n)?" answer
 
-if [ "${input}" = "y" ]; then
+if [ "${answer}" = "y" ]; then
 	echo "Yes"
-elif [ "${input}" = "n" ]; then
+elif [ "${answer}" = "n" ]; then
 	echo "No"
 else
 	echo "others"
