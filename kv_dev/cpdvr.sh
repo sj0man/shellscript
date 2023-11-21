@@ -2,7 +2,7 @@
 #
 #
 #SRCDIR=/mnt/dev2/work/xnst16/canis/nt98336/dvr
-SRCDIR=/mnt/dev2/nt9832x/crater/nt98633/dvr
+SRCDIR=/mnt/dev2/nt9832x/crater/nt9833x/dvr
 SRCFILE=dvr.ko
 
 DESTDIR=/dvr
