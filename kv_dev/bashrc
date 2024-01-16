@@ -18,4 +18,6 @@ alias m=less
 alias h=history
 alias tailf='tail -f'
 alias g='/dvr/gui.tmp -disablewdt'
+alias g1='mv /dvr/gui /dvr/gui.tmp'
+alias g2='mv /dvr/gui.tmp /dvr/gui'
 alias tv='tail -f /var/log/message'
