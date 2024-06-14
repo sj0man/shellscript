@@ -5,7 +5,7 @@
 if [ $# = 1 ]; then
 	TOP_SDK=$1
 else
-	TOP_SDK=~/tmp/sdk_113
+	TOP_SDK=~/xnpm32/canis/nt9833x
 fi
 
 if [ ! -d ${TOP_SDK} ]; then
