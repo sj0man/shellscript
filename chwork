@@ -1,0 +1,28 @@
+WORK_MODEL=$1
+if [ "${WORK_MODEL}" = "" ]; then
+        echo Usage: chwork model
+        echo
+        exit 0
+fi
+
+export MY_BUILD_DIR=${HOME}/work/${WORK_MODEL}
+export MY_GEMINI=${MY_BUILD_DIR}/gemini
+export MY_AQUILA=${MY_BUILD_DIR}/aquila
+
+if [ "${WORK_MODEL}" = "inpm32" ]; then
+	WORK_CHIP=nt9833x
+	export MY_ARIES=${MY_BUILD_DIR}/aries/cal/crater
+	export MY_SDK=${MY_BUILD_DIR}/crater/${WORK_CHIP}
+else
+	if [ "${WORK_MODEL}" = "arst04" ]; then
+		WORK_CHIP=nt98332
+	else
+		WORK_CHIP=nt98336
+	fi
+
+	export MY_ARIES=${MY_BUILD_DIR}/aries/cal/canis
+	export MY_SDK=${MY_BUILD_DIR}/canis/${WORK_CHIP}
+fi
+
+
+
