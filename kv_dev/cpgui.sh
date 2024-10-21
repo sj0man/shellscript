@@ -1,11 +1,9 @@
-#SRCDIR=/mnt/dev2/work/xnst16/output
-#SRCFILE=gui-canis-3r
+MY_PROJECT=canis
+MY_MODEL=arlt16
+MY_CHIP=nt98336
 
-#SRCDIR=/mnt/dev2/nt9832x/output
-#SRCFILE=gui-crater-3r
-
-SRCDIR=/mnt/dev2/xnpm32/output
-SRCFILE=gui-canis-3r
+SRCDIR=/mnt/dev2/work/$MY_MODEL/output
+SRCFILE=gui-$MY_PROJECT-3r
 
 DESTDIR=/dvr
 DESTFILE=gui

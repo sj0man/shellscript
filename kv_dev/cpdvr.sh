@@ -1,10 +1,7 @@
-#
-#
-#
-#SRCDIR=/mnt/dev2/work/xnst16/canis/nt98336/dvr
-#SRCDIR=/mnt/dev2/inpm32/crater/nt9833x/dvr
-SRCDIR=/mnt/dev2/xnpm32/canis/nt9833x/dvr
+MY_MODEL=arlt16
+MY_CHIP=nt98336
 
+SRCDIR=/mnt/dev2/work/$MY_MODEL/canis/$MY_CHIP/dvr
 SRCFILE=dvr.ko
 
 DESTDIR=/dvr
