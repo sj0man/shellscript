@@ -14,7 +14,11 @@ if [ "${WORK_MODEL}" = "inpm32" ]; then
 	export MY_ARIES=${MY_BUILD_DIR}/aries/cal/crater
 	export MY_SDK=${MY_BUILD_DIR}/crater/${WORK_CHIP}
 else
-	if [ "${WORK_MODEL}" = "arst04" ]; then
+	if [ "${WORK_MODEL}" = "xnpm32" ]; then
+		WORK_CHIP=nt9833x
+	elif [ "${WORK_MODEL}" = "anpm32" ]; then
+		WORK_CHIP=nt9833x
+	elif [ "${WORK_MODEL}" = "arst04" ]; then
 		WORK_CHIP=nt98332
 	else
 		WORK_CHIP=nt98336
