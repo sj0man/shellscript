@@ -1,6 +1,4 @@
 #
-#
-
 MNTDIR=/mnt/dev2
 SHDIR=${MNTDIR}/mylab/shellscript/kv_dev
 
@@ -20,7 +18,6 @@ fi
 udhcpc -i eth0
 mount -t nfs -o nolock ${IPADDR}:${HOME} ${MNTDIR}
 
-
 if [ ! -d $SHDIR ] ; then
 	echo need to mount
 	echo
@@ -38,8 +35,3 @@ fi
 if [ -e ${BASHRC} ] && [ -e ${PROFILE} ] ; then
 	cat ${BASHRC} >> ${PROFILE}
 fi
-
-
-
-
-
