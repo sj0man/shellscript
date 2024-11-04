@@ -1,7 +1,8 @@
+MY_PROJECT=canis
 MY_MODEL=arlt16
 MY_CHIP=nt98336
 
-SRCDIR=/mnt/dev2/work/$MY_MODEL/canis/$MY_CHIP/dvr
+SRCDIR=/mnt/dev2/work/$MY_MODEL/$MY_PROJECT/$MY_CHIP/dvr
 SRCFILE=dvr.ko
 
 DESTDIR=/dvr
