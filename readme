@@ -7,4 +7,3 @@ $ sh -n script.sh
 
 /bin/sh -> /bin/bash
 
-push test
