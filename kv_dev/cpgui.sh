@@ -2,7 +2,7 @@ MY_PROJECT=canis
 MY_MODEL=arlt16
 MY_CHIP=nt98336
 
-SRCDIR=/mnt/dev2/work/$MY_MODEL/output
+SRCDIR=/mnt/dev7/work/$MY_MODEL/output
 SRCFILE=gui-$MY_PROJECT-3r
 
 DESTDIR=/dvr

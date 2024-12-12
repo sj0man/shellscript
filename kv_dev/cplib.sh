@@ -1,8 +1,8 @@
-MY_PROJECT=canis
-MY_MODEL=arlt16
-MY_CHIP=nt98336
+MY_PROJECT=crater
+MY_MODEL=inpm32
+MY_CHIP=nt9833x
 
-SRCDIR=/mnt/dev2/work/$MY_MODEL/output
+SRCDIR=/mnt/dev7/work/$MY_MODEL/output
 SRCFILE=libdal-$MY_PROJECT-$MY_CHIP.so
 
 DESTDIR=/usr/lib

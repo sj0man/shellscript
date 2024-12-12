@@ -1,5 +1,5 @@
 #
-MNTDIR=/mnt/dev2
+MNTDIR=/mnt/dev7
 SHDIR=${MNTDIR}/mylab/shellscript/kv_dev
 
 LOG_FILE=/var/log/message
@@ -12,7 +12,7 @@ HOME=/home/ubuntu
 IPADDR=192.168.0.21
 
 if [ ! -d ${MNTDIR} ] ; then
-        mkdir -p /mnt/dev2
+        mkdir -p ${MNTDIR}
 fi
 
 udhcpc -i eth0
