@@ -21,6 +21,18 @@ DIRS="	\
 	${TOP_SDK}/code/hdal/vendor/isp/include	\
 	${TOP_SDK}/code/hdal/vendor/pcie/include	\
 	${TOP_SDK}/code/hdal/vendor/media/include	\
+	${TOP_SDK}/code/hdal/drivers/k_driver/include	\
+	${TOP_SDK}/code/hdal/vendor/ai/drivers/k_driver/include	\
+	${TOP_SDK}/code/hdal/vendor/ai2/include	\
+	${TOP_SDK}/code/hdal/vendor/ai2/source_pub/include \
+	${TOP_SDK}/code/hdal/vendor/ai2/source_pub/vendor_ai_cpu/vendor_ai_cpu_detout.h \
+	"
+
+DIRS_SUB=" \
+	${TOP_SDK}/code/vos/drivers/include/kwrap \
+	${TOP_SDK}/code/hdal/vendor/ai2/include/vendor_ai_cpu \
+	${TOP_SDK}/code/hdal/vendor/ai2/include/vendor_ai_dla \
+	${TOP_SDK}/code/hdal/vendor/ai2/include/vendor_ai_net \
 	"
 
 for DIR in ${DIRS} ; do
@@ -28,6 +40,12 @@ for DIR in ${DIRS} ; do
 		cp -v ${DIR}/*.h ${PWD}
 	elif [ -f ${DIR} ]; then
 		cp -v ${DIR} ${PWD}
+	fi
+done
+
+for DIR in ${DIRS_SUB} ; do
+	if [ -d ${DIR} ]; then
+		cp -fr ${DIR} ${PWD}
 	fi
 done
 
