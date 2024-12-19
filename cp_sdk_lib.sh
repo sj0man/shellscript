@@ -5,7 +5,7 @@
 if [ $# = 1 ]; then
 	TOP_SDK=$1
 else
-	TOP_SDK=~/xnpm32/canis/nt9833x
+	TOP_SDK=~/work/arlt16/canis/nt98336
 fi
 
 if [ ! -d ${TOP_SDK} ]; then
@@ -14,8 +14,10 @@ if [ ! -d ${TOP_SDK} ]; then
 fi
 
 DIRS="	\
-	${TOP_SDK}/code/lib/source/libfdt/libfdt.a
-	${TOP_SDK}/code/hdal/source/libhdal.a
+	${TOP_SDK}/code/lib/source/libfdt/libfdt.a \
+	${TOP_SDK}/code/hdal/source/libhdal.a \
+	${TOP_SDK}/code/vos/output/libvos.a \
+	${TOP_SDK}/code/hdal/vendor/output/libarm_compute.so \
 	${TOP_SDK}/code/hdal/vendor/output \
 	"
 
