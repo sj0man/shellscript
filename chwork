@@ -8,8 +8,10 @@ fi
 export MY_BUILD_DIR=${HOME}/work/${WORK_MODEL}
 export MY_GEMINI=${MY_BUILD_DIR}/gemini
 export MY_AQUILA=${MY_BUILD_DIR}/aquila
+export MY_VIRGO=${MY_BUILD_DIR}/virgo
+export MY_VELA=${HOME}/work/vela
 
-if [ "${WORK_MODEL}" = "inpm32" ] || [ "${WORK_MODEL}" = "inst16" ] || [ "${WORK_MODEL}" = "inst08" ] || [ "${WORK_MODEL}" = "inst04" ]
+if [ "${WORK_MODEL}" = "inpm32" ] || [ "${WORK_MODEL}" = "inst16" ] || [ "${WORK_MODEL}" = "inst08" ] || [ "${WORK_MODEL}" = "inst04" ] || [ "${WORK_MODEL}" = "inlt16" ]
 then
 	WORK_CHIP=nt9833x
 	export MY_ARIES=${MY_BUILD_DIR}/aries/cal/crater
@@ -21,7 +23,7 @@ else
 		WORK_CHIP=nt9831x
 	elif [ "${WORK_MODEL}" = "anst04" ] || [ "${WORK_MODEL}" = "anlt04" ] || [ "${WORK_MODEL}" = "anlt08" ]; then
 		WORK_CHIP=nt9832x
-	elif [ "${WORK_MODEL}" = "arst04" ]; then
+	elif [ "${WORK_MODEL}" = "arst04" ] || [ "${WORK_MODEL}" = "arlt08" ] || [ "${WORK_MODEL}" = "arlt04" ]; then
 		WORK_CHIP=nt98332
 	else
 		WORK_CHIP=nt98336
