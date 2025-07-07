@@ -1,13 +1,13 @@
 #!/bin/sh
 
 COUNT=0
-DELAY_SECOND=60
+DELAY_SECOND=600 # Default delay is 10 minutes
 CHECK_INTERVAL=$((24 * 3600 / $DELAY_SECOND))
 MAX_LINES=$(($CHECK_INTERVAL * 365))
 CPU_TEMP_FILE=/sys/class/thermal/thermal_zone0/temp
 LOGFILE=/var/log/cpu_temperature.log
 BAKFILE=/dvr/cpu_temperature.log
-CUR_DATE=$(date '+%Y-%m-%d-%H')
+CUR_DATE=$(date '+%Y-%m-%d')
 
 
 if [ -z $CPU_TEMP_FILE ]; then
@@ -57,7 +57,7 @@ do
 		COUNT=0
 	fi
 
-	NEW_DATE=$(date '+%Y-%m-%d-%H')
+	NEW_DATE=$(date '+%Y-%m-%d')
 	if [ "$CUR_DATE" != "$NEW_DATE" ]; then
 		cp "${LOGFILE}" "${BAKFILE}"
 		CUR_DATE="$NEW_DATE"
