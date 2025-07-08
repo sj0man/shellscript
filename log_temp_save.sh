@@ -70,6 +70,10 @@ if [ "$1" = "-daemon" ]; then
 		get_cpu_temp
 		get_hdd_temp
 
+		if [ -f "$TZFILE" ] && [ -s "$TZFILE" ]; then
+			export TZ=$(cat "$TZFILE")
+		fi
+
 		echo "$(date '+%Y-%m-%d-%H:%M:%S'): ${CPU_TEMP} ${HDD_TEMP}" >> "$LOGFILE"
 		if [ $(date +%H) -ge 9 ] && [ $(date +%H) -le 18 ]; then
 			DELAY_SECOND=$((60 * 10)) # 10 minutes during the day
