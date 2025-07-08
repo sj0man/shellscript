@@ -1,17 +1,22 @@
 #!/bin/sh
 
 COUNT=0
-DELAY_SECOND=$((60 * 60))
-CHECK_INTERVAL=$((24 * 3600 / $DELAY_SECOND))
+SMART_SLEEP=1
+CHECK_INTERVAL=74
 DELETE_LINES=$(($CHECK_INTERVAL * 30))
 MAX_LINES=$(($CHECK_INTERVAL * 365))
 CPU_TEMP_FILE=/sys/class/thermal/thermal_zone0/temp
 LOGFILE=/var/log/cpu_temperature.log
+TZFILE="/etc/TZ"
 
 CPU_TEMP=""
 HDD_TEMP=""
 
 [ -d /var/log ] || mkdir -p /var/log
+
+if [ -f "$TZFILE" ] && [ -s "$TZFILE" ]; then
+	export TZ=$(cat "$TZFILE")
+fi
 
 get_cpu_temp()
 {
@@ -30,7 +35,7 @@ get_hdd_temp()
 
 		if smartctl -i "$DISK" | grep -q "SMART support is: Disabled"; then
 			smartctl -s on "$DISK" > /dev/null
-			sleep 1
+			sleep $SMART_SLEEP
 			TMP_TEMP=$(smartctl -A "$DISK" 2> /dev/null | awk '$1 == 194 {print $10}')
 			smartctl -s off "$DISK" > /dev/null
 		else
@@ -59,13 +64,24 @@ keep_log_size()
 	fi
 }
 
-while true
-do
+if [ "$1" = "-daemon" ]; then
+	while true
+	do
+		get_cpu_temp
+		get_hdd_temp
+
+		echo "$(date '+%Y-%m-%d-%H:%M:%S'): ${CPU_TEMP} ${HDD_TEMP}" >> "$LOGFILE"
+		if [ $(date +%H) -ge 9 ] && [ $(date +%H) -le 18 ]; then
+			DELAY_SECOND=$((60 * 10)) # 10 minutes during the day
+		else
+			DELAY_SECOND=$((60 * 60)) # 1 hour during the night
+		fi
+		sleep $DELAY_SECOND
+
+		keep_log_size
+	done
+else
 	get_cpu_temp
 	get_hdd_temp
-
 	echo "$(date '+%Y-%m-%d-%H:%M:%S'): ${CPU_TEMP} ${HDD_TEMP}" >> "$LOGFILE"
-	sleep $DELAY_SECOND
-
-	keep_log_size
-done
+fi
