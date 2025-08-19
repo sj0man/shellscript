@@ -1,0 +1,34 @@
+# rk3588 device tree check (find)
+# 2025-08-19
+#
+if [ $# = 0 ]; then
+	echo $0 string
+	exit
+fi
+
+MYSTR=$1
+TOPDIR=~/work/rk3588/lynx
+KDIR=${TOPDIR}/kernel
+DTDIR=${KDIR}/arch/arm64/boot/dts/rockchip
+
+FILES="\
+	rk3588-nvr-demo-v10-spi-nand.dts \
+	rk3588-nvr-demo.dtsi \
+	rk3588-linux.dtsi \
+	rk3588.dtsi \
+	rk3588s.dtsi \
+	rk3588-vccio3-pinctrl.dtsi \
+	rk3588s-pinctrl.dtsi \
+	rockchip-pinconf.dtsi \
+	rk3588-nvr.dtsi \
+	rk3588-rk806-single.dtsi \
+	rk3588-cpu-swap.dtsi \
+"
+
+for FILE in ${FILES};
+do
+	echo ===== ${FILE} =====
+	grep -n "$MYSTR" ${DTDIR}/${FILE}
+done
+
+
