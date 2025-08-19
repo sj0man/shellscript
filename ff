@@ -11,6 +11,6 @@ if [ "${FILES}" = "" ]; then
 	exit 0
 fi
 
-find . -name "${FILES}" -print 2> /dev/null
+find . -iname "${FILES}" -print 2> /dev/null
 
 exit 0
