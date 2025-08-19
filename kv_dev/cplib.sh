@@ -1,6 +1,6 @@
-MY_PROJECT=crater
-MY_MODEL=inpm32
-MY_CHIP=nt9833x
+MY_PROJECT=canis
+MY_MODEL=xnst16
+MY_CHIP=nt98336
 
 SRCDIR=/mnt/dev7/work/$MY_MODEL/output
 SRCFILE=libdal-$MY_PROJECT-$MY_CHIP.so

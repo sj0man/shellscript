@@ -3,8 +3,8 @@
 #
 
 HOME=/home/ubuntu
-MNT_DIR=/mnt/dev2
-IPADDR=192.168.0.21
+MNT_DIR=/mnt/dev7
+IPADDR=192.168.0.14
 
 if [ ! -d ${MNT_DIR} ] ; then
 	mkdir -p ${MNT_DIR}
@@ -14,6 +14,6 @@ fi
 udhcpc -i eth0
 mount -t nfs -o nolock ${IPADDR}:${HOME} ${MNT_DIR}
 
-# mount -t nfs -o nolock 192.168.0.21:/home/ubuntu /mnt/dev7
+# mount -t nfs -o nolock 192.168.0.14:/home/ubuntu /mnt/dev7
 
 

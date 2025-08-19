@@ -9,7 +9,7 @@ BASHRC=${PWD}/bashrc
 PROFILE=/etc/profile
 
 HOME=/home/ubuntu
-IPADDR=192.168.0.21
+IPADDR=192.168.0.14
 
 if [ ! -d ${MNTDIR} ] ; then
         mkdir -p ${MNTDIR}
