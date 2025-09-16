@@ -9,13 +9,19 @@ BASHRC=${PWD}/bashrc
 PROFILE=/etc/profile
 
 HOME=/home/ubuntu
-IPADDR=192.168.0.14
+IPADDR=192.168.0.4
 
 if [ ! -d ${MNTDIR} ] ; then
         mkdir -p ${MNTDIR}
 fi
 
-udhcpc -i eth0
+NODENAME=`uname -n`
+if [ "$NODENAME" = "RK3588" ] || [ "$NODENAME" = "rk3588-buildroot" ]; then
+	echo "RK3588"
+else
+	udhcpc -i eth0
+fi
+
 mount -t nfs -o nolock ${IPADDR}:${HOME} ${MNTDIR}
 
 if [ ! -d $SHDIR ] ; then

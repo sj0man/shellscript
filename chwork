@@ -26,6 +26,10 @@ elif [ "${WORK_MODEL}" = "rk3588" ]
 then
 	export MY_ARIES=${MY_BUILD_DIR}/aries/cal/lynx
 	export MY_SDK=${MY_BUILD_DIR}/lynx
+elif [ "${WORK_MODEL}" = "som3588" ]
+then
+	export MY_ARIES=${MY_BUILD_DIR}/aries/cal/lynx
+	export MY_SDK=${MY_BUILD_DIR}
 else
 	if [ "${WORK_MODEL}" = "xnpm32" ] || [ "${WORK_MODEL}" = "anpm32" ]; then
 		WORK_CHIP=nt9833x

@@ -13,7 +13,6 @@ alias df='df -h'
 alias cp='cp -i'
 alias rm='rm -i'
 alias c=clear
-alias v=vi
 alias m=less
 alias h=history
 alias tailf='tail -f'
