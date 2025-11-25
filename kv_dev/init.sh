@@ -7,6 +7,7 @@ LOG_LINK=var
 
 BASHRC=${PWD}/bashrc
 PROFILE=/etc/profile
+RK3588_BASHRC=/etc/bash.bashrc
 
 HOME=/home/ubuntu
 IPADDR=192.168.0.4
@@ -39,7 +40,11 @@ if [ ! -f ${LOG_LINK} ] ; then
 fi
 
 if [ -e ${BASHRC} ] && [ -e ${PROFILE} ] ; then
-	cat ${BASHRC} >> ${PROFILE}
+	if [ "$NODENAME" = "rk3588-buildroot" ]; then
+		cat ${BASHRC} >> $RK3588_BASHRC
+	else
+		cat ${BASHRC} >> ${PROFILE}
+	fi
 fi
 
 

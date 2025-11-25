@@ -12,7 +12,7 @@ if [ ! -d ${MNT_DIR} ] ; then
 fi
 
 # ifconfig eth0 hw ether 00:09:1b:00:50:08
-if [ "$NODENAME" = "RK3588" ]; then
+if [ "$NODENAME" = "RK3588" ] || [ "$NODENMAE" = "NVR-IRPM64" ]; then
 	echo "RK3588"
 else
 	udhcpc -i eth0

@@ -1,7 +1,8 @@
-MY_PROJECT=canis
-MY_MODEL=xnst16
-MY_CHIP=nt98336
+MY_PROJECT=lynx
+MY_MODEL=rk3588
+MY_CHIP=
 
+MNTDIR=/mnt/dev7
 SRCDIR=/mnt/dev7/work/$MY_MODEL/$MY_PROJECT/$MY_CHIP/dvr
 SRCFILE=dvr.ko
 
@@ -39,6 +40,9 @@ echo -n "Reboot? "
 read input
 
 if [ "${input}" = "" ]; then
+	if [ -d $SRCDIR ]; then
+		umount $MNTDIR
+	fi
 	reboot
 fi
 
