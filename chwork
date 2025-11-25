@@ -12,7 +12,7 @@ export MY_VIRGO=${MY_BUILD_DIR}/virgo
 export MY_VELA=${HOME}/work/vela
 
 
-if [ "${WORK_MODEL}" = "inpm32" ]
+if [ "${WORK_MODEL}" = "inpm32" ] || [ "${WORK_MODEL}" = "inst16" ]
 then
 	WORK_CHIP=nt9833x
 	export MY_ARIES=${MY_BUILD_DIR}/aries/cal/crater
