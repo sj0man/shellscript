@@ -18,7 +18,7 @@ fi
 
 NODENAME=`uname -n`
 if [ "$NODENAME" = "RK3588" ] || [ "$NODENAME" = "rk3588-buildroot" ]; then
-	echo "RK3588"
+	LOG_FILE=/var/log/messages
 else
 	udhcpc -i eth0
 fi
