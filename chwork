@@ -11,42 +11,48 @@ export MY_AQUILA=${MY_BUILD_DIR}/aquila
 export MY_VIRGO=${MY_BUILD_DIR}/virgo
 export MY_VELA=${HOME}/work/vela
 
+# 모델별 설정: "chip|cal_dir|sdk_dir"
+# sdk_dir 가 비어있으면 MY_SDK=${MY_BUILD_DIR}
+# chip 이 비어있으면 MY_SDK=${MY_BUILD_DIR}/${sdk_dir}
+# 둘 다 있으면   MY_SDK=${MY_BUILD_DIR}/${sdk_dir}/${chip}
+declare -A MODELS=(
+    [inpm32]="nt9833x|crater|crater"
+    [inst16]="nt9833x|crater|crater"
+    [inst08]="nt9833x|crater|crater"
+    [inst04]="nt9833x|crater|crater"
+    [inlt16]="nt9832x|crater|crater"
+    [rk3588]="|lynx|lynx"
+    [som3588]="|lynx|"
+    [xnpm32]="nt9833x|canis|canis"
+    [anpm32]="nt9833x|canis|canis"
+    [anst08]="nt9831x|canis|canis"
+    [anlt16]="nt9831x|canis|canis"
+    [anst04]="nt9832x|canis|canis"
+    [anlt04]="nt9832x|canis|canis"
+    [anlt08]="nt9832x|canis|canis"
+    [arst04]="nt98332|canis|canis"
+    [arlt08]="nt98332|canis|canis"
+    [arlt04]="nt98332|canis|canis"
+    [nt9831x]="nt9831x|canis|canis"
+    [nt9832x]="nt9832x|crater|crater"
+)
 
-if [ "${WORK_MODEL}" = "inpm32" ] || [ "${WORK_MODEL}" = "inst16" ] || [ "${WORK_MODEL}" = "inst08" ] || [ "${WORK_MODEL}" = "inst04" ]
-then
-	WORK_CHIP=nt9833x
-	export MY_ARIES=${MY_BUILD_DIR}/aries/cal/crater
-	export MY_SDK=${MY_BUILD_DIR}/crater/${WORK_CHIP}
-elif [ "${WORK_MODEL}" = "inlt16" ]
-then
-	WORK_CHIP=nt9832x
-	export MY_ARIES=${MY_BUILD_DIR}/aries/cal/crater
-	export MY_SDK=${MY_BUILD_DIR}/crater/${WORK_CHIP}
-elif [ "${WORK_MODEL}" = "rk3588" ]
-then
-	export MY_ARIES=${MY_BUILD_DIR}/aries/cal/lynx
-	export MY_SDK=${MY_BUILD_DIR}/lynx
-elif [ "${WORK_MODEL}" = "som3588" ]
-then
-	export MY_ARIES=${MY_BUILD_DIR}/aries/cal/lynx
-	export MY_SDK=${MY_BUILD_DIR}
+if [[ -v MODELS[$WORK_MODEL] ]]; then
+    IFS="|" read -r WORK_CHIP CAL_DIR SDK_DIR <<< "${MODELS[$WORK_MODEL]}"
 else
-	if [ "${WORK_MODEL}" = "xnpm32" ] || [ "${WORK_MODEL}" = "anpm32" ]; then
-		WORK_CHIP=nt9833x
-	elif [ "${WORK_MODEL}" = "anst08" ] || [ "${WORK_MODEL}" = "anlt16" ]; then
-		WORK_CHIP=nt9831x
-	elif [ "${WORK_MODEL}" = "anst04" ] || [ "${WORK_MODEL}" = "anlt04" ] || [ "${WORK_MODEL}" = "anlt08" ]; then
-		WORK_CHIP=nt9832x
-	elif [ "${WORK_MODEL}" = "arst04" ] || [ "${WORK_MODEL}" = "arlt08" ] || [ "${WORK_MODEL}" = "arlt04" ]; then
-		WORK_CHIP=nt98332
-	elif [ "${WORK_MODEL}" = "nt9831x" ] || [ "${WORK_MODEL}" = "nt9832x" ]; then
-		WORK_CHIP=$WORK_MODEL
-	else
-		WORK_CHIP=nt98336
-	fi
+    WORK_CHIP=nt98336
+    CAL_DIR=canis
+    SDK_DIR=canis
+fi
 
-	export MY_ARIES=${MY_BUILD_DIR}/aries/cal/canis
-	export MY_SDK=${MY_BUILD_DIR}/canis/${WORK_CHIP}
+export MY_ARIES=${MY_BUILD_DIR}/aries/cal/${CAL_DIR}
+
+if [ -z "${SDK_DIR}" ]; then
+    export MY_SDK=${MY_BUILD_DIR}
+elif [ -z "${WORK_CHIP}" ]; then
+    export MY_SDK=${MY_BUILD_DIR}/${SDK_DIR}
+else
+    export MY_SDK=${MY_BUILD_DIR}/${SDK_DIR}/${WORK_CHIP}
 fi
 
 
