@@ -16,13 +16,13 @@ fi
 while true
 do
     COUNT=$((COUNT + 1))
-    DATE_TIME=$(date +"%m%d-%H%M%S")
+    DATE_TIME=$(TZ=KST-9 date +"%m%d-%H%M%S")
 
     echo "===== ${DATE_TIME} ===== LOOP ${COUNT} =====" >> $LOGFILE
 
     # write random data to nand
-    #dd if=$INFILE of=$OUTFILE bs=1M count=100 conv=fsync 2>&1 | tee -a $LOGFILE >/dev/null
-	dd if=$INFILE of=$OUTFILE bs=1M count=100 conv=fsync >/dev/null 2>&1
+    dd if=$INFILE of=$OUTFILE bs=1M count=100 conv=fsync 2>&1 | tee -a $LOGFILE >/dev/null
+	#dd if=$INFILE of=$OUTFILE bs=1M count=100 conv=fsync >/dev/null 2>&1
 
     RET=$?
     if [ $RET -ne 0 ]; then
