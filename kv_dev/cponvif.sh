@@ -1,5 +1,9 @@
+MY_PROJECT=crater
+MY_MODEL=nt9832x
+MY_CHIP=nt9832x
+
 MNTDIR=/mnt/dev7
-SRCDIR=$MNTDIR/tmp/
+SRCDIR=/mnt/dev7/work/$MY_MODEL/onvifcpplib/linux
 SRCFILE=libonvifcpplib.so
 
 DESTDIR=/usr/lib
@@ -28,4 +32,15 @@ if [ "${input}" = "" ]; then
 else
 	exit
 fi
+
+echo -n "Reboot? "
+read input
+
+if [ "${input}" = "" ]; then
+        if [ -d $SRCDIR ]; then
+                umount $MNTDIR
+        fi
+        reboot
+fi
+
 

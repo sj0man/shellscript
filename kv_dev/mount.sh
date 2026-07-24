@@ -4,8 +4,9 @@
 
 HOME=/home/ubuntu
 MNT_DIR=/mnt/dev7
-IPADDR=192.168.0.4
+IPADDR=192.168.0.28
 NODENAME=`uname -n`
+ETHDEV=eth0
 
 if [ ! -d ${MNT_DIR} ] ; then
 	mkdir -p ${MNT_DIR}
@@ -15,7 +16,7 @@ fi
 if [ "$NODENAME" = "RK3588" ] || [ "$NODENMAE" = "NVR-IRPM64" ]; then
 	echo "RK3588"
 else
-	udhcpc -i eth0
+	echo udhcpc -i $ETHDEV
 fi
 mount -t nfs -o nolock ${IPADDR}:${HOME} ${MNT_DIR}
 

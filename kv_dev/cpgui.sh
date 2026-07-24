@@ -1,6 +1,6 @@
-MY_PROJECT=lynx
-MY_MODEL=rk3588
-MY_CHIP=rk3588
+MY_PROJECT=canis
+MY_MODEL=xnpm32
+MY_CHIP=
 MY_OEM=3r
 
 SRCDIR=/mnt/dev7/work/$MY_MODEL/output

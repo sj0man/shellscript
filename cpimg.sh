@@ -1,6 +1,6 @@
 #!/bin/sh
-SDIR=./rockdev
-TDIR=~/tftp/lynx
+SDIR=./output/preburn_images
+TDIR=~/tftp/inst16
 
 # 대상 디렉토리가 없으면 생성
 mkdir -p $TDIR

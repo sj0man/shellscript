@@ -10,7 +10,7 @@ PROFILE=/etc/profile
 RK3588_BASHRC=/etc/bash.bashrc
 
 HOME=/home/ubuntu
-IPADDR=192.168.0.4
+IPADDR=192.168.0.28
 
 if [ ! -d ${MNTDIR} ] ; then
         mkdir -p ${MNTDIR}
