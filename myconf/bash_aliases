@@ -15,7 +15,7 @@ alias ud=pushd
 alias pd=popd
 alias tailf='tail -f'
 alias t='_tt(){ telnet 192.168.0."$1";}; _tt'
-alias myinit='cat ~/mylab/kv_dev/init.sh'
+alias myinit='cat ~/mylab/shellscript/kv_dev/init.sh'
 
 alias fn='date +"%m%d-%H%M.log"; echo'
 alias gitn='git log --oneline --name-only -1'
