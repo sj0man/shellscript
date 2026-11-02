@@ -1,0 +1,25 @@
+# ~/.bash_aliases
+#
+alias df='df -h'
+alias ll='ls -CF'
+alias l='ls -lhF --time-style long-iso'
+alias la='ls -A'
+alias ls='ls --color=auto'
+alias m=less
+alias c=clear
+alias d='sudo docker'
+alias h='history 30'
+alias cp='cp -ai'
+alias rm='rm -i'
+alias ud=pushd
+alias pd=popd
+alias tailf='tail -f'
+alias t='_tt(){ telnet 192.168.0."$1";}; _tt'
+alias myinit='cat ~/mylab/kv_dev/init.sh'
+
+alias fn='date +"%m%d-%H%M.log"; echo'
+alias gitn='git log --oneline --name-only -1'
+alias gitg='git log --oneline --graph --all'
+alias gitp='git log -p -1 -w '
+
+
