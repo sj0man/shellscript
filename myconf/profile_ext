@@ -28,3 +28,10 @@ fi
 
 PATH="$PATH:$HOME/etc:/opt/rk3588/toolchain/bin:/usr/local/go/bin"
 
+#export PATH=/opt/arm/arm-ca53-linux-gnueabihf-6.4/bin:$PATH
+#export PATH=/opt/arm-ca53-linux-gnueabihf-8.4/bin:$PATH
+#export PATH=/opt/arm-ca9-linux-gnueabihf-6.5/bin:$PATH
+#export PATH=/opt/aarch64-ca53-linux-gnueabihf-8.4/bin:$PATH
+#export PATH=/opt/aarch64-ca53-linux-gnueabihf-8.4.01/bin:$PATH
+
+
